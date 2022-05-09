@@ -1,0 +1,30 @@
+﻿<Window
+    x:Class="InEducation.View.Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:uc="clr-namespace:InEducation.Resourses.UserControls"
+    AllowsTransparency="True"
+    Width="1000"
+    Height="600"
+    MinWidth="1000"
+    MinHeight="600"
+    ResizeMode="CanResizeWithGrip"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None">
+    <Grid Background="#3a3e46">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" MouseDown="Window_MouseDownMove">
+            <uc:TitleBar />
+        </Grid>
+
+        <Frame
+            x:Name="GlobalFrame"
+            Grid.Row="1"
+            NavigationUIVisibility="Hidden"
+            Source="/View/Pages/SystemChoice.xaml" />
+    </Grid>
+</Window>
