@@ -9,12 +9,26 @@ using InEducation.View.Pages;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using System.Collections.Generic;
 
 namespace InEducation.ViewModels
 {
-    public class LoginViewModel : ViewModel
+    public class LoginViewModel : ViewModel, IObservable
     {
         private InEducationEntities context = new InEducationEntities();
+        private readonly List<IObserver> _observers = new List<IObserver>();
+
+        private User _user;
+
+        public User NewUser
+        {
+            get => _user;
+            set
+            {
+                Set(ref _user, value);
+                NotifyObservers();
+            } 
+        }
 
         private string _Login;
 
@@ -83,6 +97,19 @@ namespace InEducation.ViewModels
                 else
                     MessageBox.Show("Неверный логин или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             });
+        }
+
+        public void AddObserver(IObserver observer) => _observers.Add(observer);
+
+        public void RemoveObserver(IObserver observer) => _observers.Remove(observer);
+
+        public void NotifyObservers()
+        {
+            foreach (IObserver observer in _observers)
+            {
+                observer.Update(NewUser);
+            }
+
         }
     }
 }
