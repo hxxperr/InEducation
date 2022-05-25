@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Infrastructure\Base\Command.cs" />
     <Compile Include="Infrastructure\LambdaCommand.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Navigation\Navigation.cs" />
     <Compile Include="Resourses\ObjectLogic\TextBoxBehavior.cs" />
     <Compile Include="Resourses\UserControls\BindablePasswordBox.xaml.cs">
@@ -137,12 +138,16 @@
     <Compile Include="Server\Чат.cs">
       <DependentUpon>ServerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdminPageViewModel.cs" />
     <Compile Include="ViewModels\Base\IObservable.cs" />
     <Compile Include="ViewModels\Base\IObserver.cs" />
     <Compile Include="ViewModels\Base\VIewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelLocator.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\TitleBarViewModel.cs" />
+    <Compile Include="View\Pages\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -185,15 +190,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Resourses\UserControls\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resourses\UserControls\TitleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

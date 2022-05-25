@@ -3,9 +3,12 @@ using InEducation.Server;
 using InEducation.ViewModels.Base;
 using System;
 using System.Linq;
+using InEducation.Model;
 using System.Threading.Tasks;
+using InEducation.View.Pages;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace InEducation.ViewModels
 {
@@ -46,22 +49,31 @@ namespace InEducation.ViewModels
         {
             await Task.Run(() =>
             {
-                var user = context.Пользователь.Where(u => u.Email == login &&
+                var loginUser = context.Пользователь.Where(u => u.Email == login &&
                 u.Пароль == password).FirstOrDefault();
-                if (user != null)
+                if (loginUser != null)
                 {
-                    if ((bool)user.Активность)
+                    if ((bool)loginUser.Активность)
                     {
-                        switch (user.Роль.Роль1)
+                        switch (loginUser.Роль.Роль1)
                         {
                             case "Администратор":
-                                //TODO переход страницы
+                                User user = new User(loginUser.id_пользователя, loginUser.Фамилия, loginUser.Имя, loginUser.Отчество, loginUser.Дата_рождения);
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new AdminPage()));
                                 break;
                             case "Преподаватель":
-                                //TODO переход страницы
+                                Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    Navigation.Navigation.GoTo(new AdminPage());
+
+                                });
                                 break;
                             case "Ученик":
-                                //TODO переход страницы
+                                Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    Navigation.Navigation.GoTo(new AdminPage());
+
+                                });
                                 break;
                         }
                     }
