@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8fd86b067274b8fa1e24251e6da0d21" Name="Diagram1">
+        <EntityTypeShape EntityType="InEducationModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.База_знаний" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Журнал" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Задание" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Оценка_ученика" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Пользователь" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Предмет" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Роль" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InEducationModel.Чат" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <AssociationConnector Association="InEducationModel.FK_Задание_База_знаний" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Журнал_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Журнал_Пользователь1" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Журнал_Предмет" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Задание_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Задание_Предмет" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Оценка_ученика_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Оценка_ученика_Предмет" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Пользователь_Роль" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Чат_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.FK_Чат_Пользователь1" ManuallyRouted="false" />
+        <AssociationConnector Association="InEducationModel.База_знаний_Предмет" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

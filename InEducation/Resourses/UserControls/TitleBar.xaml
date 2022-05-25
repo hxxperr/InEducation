@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:InEducation.Resourses.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding TitleBarVM, Source={StaticResource Locator}}"
     mc:Ignorable="d">
     <Border
         Height="50"
@@ -55,7 +56,7 @@
                     BorderThickness="0"
                     Command="{Binding MinimizeWindowCommand}">
                     <StackPanel>
-                        <Image Width="30" />
+                        <Image Width="30" Source="/Resourses/Pictures/TitileBar/Top_down@4x.png" />
                     </StackPanel>
                 </Button>
 
@@ -66,7 +67,7 @@
                     BorderThickness="0"
                     Command="{Binding ResizeWindowCommand}">
                     <StackPanel>
-                        <Image Width="30" />
+                        <Image Width="30" Source="/Resourses/Pictures/TitileBar/Top_restore@4x.png" />
                     </StackPanel>
                 </Button>
 
@@ -77,7 +78,8 @@
                     BorderThickness="0"
                     Command="{Binding ShutDownAppCommand}">
                     <StackPanel>
-                        <Image Width="30" />
+                        <Image Width="30" Source="/Resourses/Pictures/TitileBar/Top_exit@4x.png" />
+
                     </StackPanel>
                 </Button>
             </StackPanel>

@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InEducation.ViewModels.Base
+﻿namespace InEducation.ViewModels.Base
 {
     public class ViewModelLocator
     {
         public ViewModelLocator()
         {
+            TitleBarVM = new TitleBarViewModel();
 
+            LoginVM = new LoginViewModel();
 
         }
 
         public ViewModel MainVM { get; set; }
+
+        public ViewModel TitleBarVM { get; set; }
+
+        public ViewModel LoginVM { get; set; }
     }
 }

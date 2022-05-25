@@ -23,9 +23,6 @@ namespace InEducation.Resourses.UserControls
         public TitleBar()
         {
             InitializeComponent();
-            buttonBack = btnBack;
         }
-
-        public static Button buttonBack = new Button();
     }
 }

@@ -2,9 +2,13 @@
     x:Class="InEducation.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ViewModelsLocation="clr-namespace:InEducation.ViewModels.Base"
     xmlns:local="clr-namespace:InEducation"
+    xmlns:vm="clr-namespace:InEducation.ViewModels"
     StartupUri="\View\Windows\MainWindow.xaml">
     <Application.Resources>
+        <ViewModelsLocation:ViewModelLocator x:Key="Locator" />
+
         <Style x:Key="roundcornerpassword" TargetType="PasswordBox">
             <Setter Property="PasswordChar" Value="●" />
             <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
