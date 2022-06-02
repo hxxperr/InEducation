@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InEducation.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AdminPage.xaml
+    /// Логика взаимодействия для TeacherView.xaml
     /// </summary>
-    public partial class AdminPage : Page
+    public partial class TeacherView : Page
     {
-        public AdminPage()
+        public TeacherView()
         {
             InitializeComponent();
         }

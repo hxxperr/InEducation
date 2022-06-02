@@ -45,7 +45,9 @@ namespace InEducation.ViewModels
             get => _password;
             set => Set(ref _password, value);
         }
-
+        /// <summary>
+        /// Команда авторизации
+        /// </summary>
         public ICommand AuthorizationCommand =>
             new LambdaCommand(async (param) =>
             {
@@ -58,9 +60,15 @@ namespace InEducation.ViewModels
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }, (param) => Login != "" && Password != "");
-
+        /// <summary>
+        /// Поиск пользователя по данным введные в свойства класса и выполнение входа
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         private async Task UserConnect(string login, string password)
         {
+            // Выполняется асинхронно
             await Task.Run(() =>
             {
                 var loginUser = context.Пользователь.Where(u => u.Email == login &&
@@ -72,22 +80,13 @@ namespace InEducation.ViewModels
                         switch (loginUser.Роль.Роль1)
                         {
                             case "Администратор":
-                                User user = new User(loginUser.id_пользователя, loginUser.Фамилия, loginUser.Имя, loginUser.Отчество, loginUser.Дата_рождения);
-                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new AdminPage()));
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new AdminView()));
                                 break;
                             case "Преподаватель":
-                                Application.Current.Dispatcher.Invoke(() =>
-                                {
-                                    Navigation.Navigation.GoTo(new AdminPage());
-
-                                });
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new TeacherView()));
                                 break;
                             case "Ученик":
-                                Application.Current.Dispatcher.Invoke(() =>
-                                {
-                                    Navigation.Navigation.GoTo(new AdminPage());
-
-                                });
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new TeacherView()));
                                 break;
                         }
                     }
@@ -111,5 +110,7 @@ namespace InEducation.ViewModels
             }
 
         }
+        //User user = new User(loginUser.id_пользователя, loginUser.Фамилия, loginUser.Имя, loginUser.Отчество, loginUser.Дата_рождения);
+
     }
 }

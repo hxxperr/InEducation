@@ -10,7 +10,7 @@
     DataContext="{Binding LoginVM, Source={StaticResource Locator}}"
     mc:Ignorable="d">
 
-    <Grid Background="#2c2c2c">
+    <Grid Background="#FFFF">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100" />
@@ -34,7 +34,7 @@
                 Width="700"
                 Height="400"
                 VerticalAlignment="Top"
-                Background="#3a3e46"
+                Background="#4682B4"
                 CornerRadius="10,10,10,10">
 
                 <Grid
@@ -53,7 +53,7 @@
                         Width="700"
                         Height="50"
                         VerticalAlignment="Top"
-                        Background="#3a3e46"
+                        Background="#0e0142"
                         BorderBrush="#2c2c2c"
                         BorderThickness="0,0,0,1"
                         CornerRadius="10,10,0,0">
