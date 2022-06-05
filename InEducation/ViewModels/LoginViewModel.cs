@@ -3,15 +3,32 @@ using InEducation.Server;
 using InEducation.ViewModels.Base;
 using System;
 using System.Linq;
+using InEducation.Model;
 using System.Threading.Tasks;
+using InEducation.View.Pages;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
+using System.Collections.Generic;
 
 namespace InEducation.ViewModels
 {
-    public class LoginViewModel : ViewModel
+    public class LoginViewModel : ViewModel, IObservable
     {
         private InEducationEntities context = new InEducationEntities();
+        private readonly List<IObserver> _observers = new List<IObserver>();
+
+        private User _user;
+
+        public User NewUser
+        {
+            get => _user;
+            set
+            {
+                Set(ref _user, value);
+                NotifyObservers();
+            } 
+        }
 
         private string _Login;
 
@@ -28,7 +45,9 @@ namespace InEducation.ViewModels
             get => _password;
             set => Set(ref _password, value);
         }
-
+        /// <summary>
+        /// Команда авторизации
+        /// </summary>
         public ICommand AuthorizationCommand =>
             new LambdaCommand(async (param) =>
             {
@@ -41,27 +60,33 @@ namespace InEducation.ViewModels
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }, (param) => Login != "" && Password != "");
-
+        /// <summary>
+        /// Поиск пользователя по данным введные в свойства класса и выполнение входа
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         private async Task UserConnect(string login, string password)
         {
+            // Выполняется асинхронно
             await Task.Run(() =>
             {
-                var user = context.Пользователь.Where(u => u.Email == login &&
+                var loginUser = context.Пользователь.Where(u => u.Email == login &&
                 u.Пароль == password).FirstOrDefault();
-                if (user != null)
+                if (loginUser != null)
                 {
-                    if ((bool)user.Активность)
+                    if ((bool)loginUser.Активность)
                     {
-                        switch (user.Роль.Роль1)
+                        switch (loginUser.Роль.Роль1)
                         {
                             case "Администратор":
-                                //TODO переход страницы
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new AdminView()));
                                 break;
                             case "Преподаватель":
-                                //TODO переход страницы
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new TeacherView()));
                                 break;
                             case "Ученик":
-                                //TODO переход страницы
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new StudentView()));
                                 break;
                         }
                     }
@@ -72,5 +97,20 @@ namespace InEducation.ViewModels
                     MessageBox.Show("Неверный логин или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             });
         }
+
+        public void AddObserver(IObserver observer) => _observers.Add(observer);
+
+        public void RemoveObserver(IObserver observer) => _observers.Remove(observer);
+
+        public void NotifyObservers()
+        {
+            foreach (IObserver observer in _observers)
+            {
+                observer.Update(NewUser);
+            }
+
+        }
+        //User user = new User(loginUser.id_пользователя, loginUser.Фамилия, loginUser.Имя, loginUser.Отчество, loginUser.Дата_рождения);
+
     }
 }

@@ -17,7 +17,7 @@
             <Setter Property="Padding" Value="8,1" />
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Foreground" Value="#09162E" />
             <Setter Property="VerticalContentAlignment" Value="Bottom" />
             <Setter Property="AllowDrop" Value="true" />
             <Setter Property="Template">
@@ -25,10 +25,10 @@
                     <ControlTemplate TargetType="PasswordBox">
                         <Border
                             x:Name="Bd"
-                            Background="#3a3e46"
-                            BorderBrush="White"
+                            Background="#CFC280"
+                            BorderBrush="#BEC2A8"
                             BorderThickness="2"
-                            CornerRadius="15"
+                            CornerRadius="10"
                             OpacityMask="{x:Null}">
                             <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Border>

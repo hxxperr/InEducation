@@ -9,8 +9,8 @@
     mc:Ignorable="d">
     <Border
         Height="50"
-        Background="#3a3e46"
-        BorderBrush="#3a3e46"
+        Background="#09162E"
+        BorderBrush="#09162E"
         BorderThickness="0">
 
         <Grid Height="50px" Margin="0">
@@ -28,22 +28,6 @@
                 VerticalAlignment="Center"
                 Stretch="Fill" />
 
-
-
-            <Button
-                x:Name="btnBack"
-                Grid.Column="1"
-                Width="50"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Background="#3a3e46"
-                BorderThickness="0"
-                Command="{Binding GoBackCommand}">
-                <!--<StackPanel>
-                    <Image Source="/Resourses/Pictures/TitleBar/Top_back.png" />
-                </StackPanel>-->
-            </Button>
-
             <StackPanel
                 Grid.Column="3"
                 HorizontalAlignment="Right"
@@ -52,7 +36,7 @@
                 <Button
                     Width="50"
                     HorizontalAlignment="Right"
-                    Background="#3a3e46"
+                    Background="#09162E"
                     BorderThickness="0"
                     Command="{Binding MinimizeWindowCommand}">
                     <StackPanel>
@@ -63,7 +47,7 @@
                 <Button
                     Width="50"
                     HorizontalAlignment="Right"
-                    Background="#3a3e46"
+                    Background="#09162E"
                     BorderThickness="0"
                     Command="{Binding ResizeWindowCommand}">
                     <StackPanel>
@@ -74,7 +58,7 @@
                 <Button
                     Width="50"
                     HorizontalAlignment="Right"
-                    Background="#3a3e46"
+                    Background="#09162E"
                     BorderThickness="0"
                     Command="{Binding ShutDownAppCommand}">
                     <StackPanel>

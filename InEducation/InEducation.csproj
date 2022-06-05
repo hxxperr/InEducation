@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Infrastructure\Base\Command.cs" />
     <Compile Include="Infrastructure\LambdaCommand.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Navigation\Navigation.cs" />
     <Compile Include="Resourses\ObjectLogic\TextBoxBehavior.cs" />
     <Compile Include="Resourses\UserControls\BindablePasswordBox.xaml.cs">
@@ -137,14 +138,49 @@
     <Compile Include="Server\Чат.cs">
       <DependentUpon>ServerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdminPageViewModel.cs" />
     <Compile Include="ViewModels\Base\IObservable.cs" />
     <Compile Include="ViewModels\Base\IObserver.cs" />
     <Compile Include="ViewModels\Base\VIewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MagazineViewModel.cs" />
+    <Compile Include="ViewModels\StudentViewModel.cs" />
+    <Compile Include="ViewModels\SubjectAddViewModel.cs" />
+    <Compile Include="ViewModels\SubjectViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModel.cs" />
+    <Compile Include="ViewModels\TeacherViewModel.cs" />
     <Compile Include="ViewModels\TitleBarViewModel.cs" />
+    <Compile Include="View\Pages\AdminView.xaml.cs">
+      <DependentUpon>AdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\DisciplineView.xaml.cs">
+      <DependentUpon>DisciplineView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\MagazineView.xaml.cs">
+      <DependentUpon>MagazineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\StudentView.xaml.cs">
+      <DependentUpon>StudentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\SubjectAddView.xaml.cs">
+      <DependentUpon>SubjectAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\SubjectView.xaml.cs">
+      <DependentUpon>SubjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\TaskAddView.xaml.cs">
+      <DependentUpon>TaskAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\TaskView.xaml.cs">
+      <DependentUpon>TaskView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\TeacherView.xaml.cs">
+      <DependentUpon>TeacherView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -177,16 +213,18 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ServerModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Resource Include="Resourses\Fonts\AvenirNextCyr-Medium.ttf" />
+    <Resource Include="Resourses\Fonts\AvenirNextCyr-Regular.ttf" />
+    <Resource Include="Resourses\Fonts\hiragino-sans-gb-w3.otf" />
     <None Include="Server\ServerModel.edmx.diagram">
       <DependentUpon>ServerModel.edmx</DependentUpon>
     </None>
-    <Resource Include="Resourses\Fonts\Elektra Light Pro.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="View\Frames\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Resourses\UserControls\BindablePasswordBox.xaml">
@@ -197,7 +235,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\AdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\DisciplineView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MagazineView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\StudentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\SubjectAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\SubjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\TaskAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\TaskView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\TeacherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,6 +293,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resourses\Pictures\LoginVPic\mainLogo.png" />
+    <Resource Include="Resourses\Pictures\LoginVPic\Logo.png" />
+    <Resource Include="Resourses\Pictures\background\background.png" />
+    <Resource Include="Resourses\Pictures\background\graduation-hat.png" />
+    <Resource Include="Resourses\Pictures\background\book.png" />
+    <Resource Include="Resourses\Pictures\background\speech-bubble.png" />
     <Content Include="Server\ServerModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ServerModel.edmx</DependentUpon>

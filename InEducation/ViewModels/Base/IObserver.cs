@@ -1,7 +1,9 @@
-﻿namespace InEducation.ViewModels.Base
+﻿using InEducation.Model;
+
+namespace InEducation.ViewModels.Base
 {
     public interface IObserver
     {
-        void Update(string message);
+        void Update(User user);
     }
 }
