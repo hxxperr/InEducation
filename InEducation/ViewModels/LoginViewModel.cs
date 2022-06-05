@@ -86,7 +86,7 @@ namespace InEducation.ViewModels
                                 Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new TeacherView()));
                                 break;
                             case "Ученик":
-                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new TeacherView()));
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new StudentView()));
                                 break;
                         }
                     }

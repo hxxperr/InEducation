@@ -213,10 +213,12 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ServerModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Resource Include="Resourses\Fonts\AvenirNextCyr-Medium.ttf" />
+    <Resource Include="Resourses\Fonts\AvenirNextCyr-Regular.ttf" />
+    <Resource Include="Resourses\Fonts\hiragino-sans-gb-w3.otf" />
     <None Include="Server\ServerModel.edmx.diagram">
       <DependentUpon>ServerModel.edmx</DependentUpon>
     </None>
-    <Resource Include="Resourses\Fonts\Elektra Light Pro.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -289,6 +291,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resourses\Pictures\LoginVPic\mainLogo.png" />
+    <Resource Include="Resourses\Pictures\LoginVPic\Logo.png" />
+    <Resource Include="Resourses\Pictures\background\background.png" />
     <Content Include="Server\ServerModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ServerModel.edmx</DependentUpon>

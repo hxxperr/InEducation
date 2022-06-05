@@ -10,152 +10,91 @@
     DataContext="{Binding LoginVM, Source={StaticResource Locator}}"
     mc:Ignorable="d">
 
-    <Grid Background="#FFFF">
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="100" />
-        </Grid.ColumnDefinitions>
-
-        <Grid
-            Grid.Column="1"
-            Width="800"
-            Height="500">
+    <Grid Background="#1E3B71">
+        <Grid Width="1280" Height="720">
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="395" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="10" />
             </Grid.RowDefinitions>
 
-            <Border
+            <Image
                 Grid.Row="0"
-                Grid.Column="1"
-                Width="700"
-                Height="400"
-                VerticalAlignment="Top"
-                Background="#4682B4"
-                CornerRadius="10,10,10,10">
+                VerticalAlignment="Center"
+                Source="/Resourses/Pictures/LoginVPic/mainLogo.png" />
 
-                <Grid
-                    Width="700"
-                    Height="400"
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="232" />
+                    <ColumnDefinition Width="181" />
+                    <ColumnDefinition Width="450" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Padding="8,1"
+                    Background="#CFC280"
+                    FontSize="24"
+                    Foreground="#09162E"
+                    Text="{Binding Login}">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+                <uc:BindablePasswordBox
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                    FontFamily="Hiragino Sans GB W3"
+                    FontSize="24"
+                    Foreground="#BEC2A8"
+                    Text="Логин" />
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="35" />
-                        <RowDefinition Height="25" />
-                    </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    FontFamily="Hiragino Sans GB W3"
+                    FontSize="24"
+                    Foreground="#BEC2A8"
+                    Text="Пароль" />
 
-                    <Border
-                        Width="700"
-                        Height="50"
-                        VerticalAlignment="Top"
-                        Background="#0e0142"
-                        BorderBrush="#2c2c2c"
-                        BorderThickness="0,0,0,1"
-                        CornerRadius="10,10,0,0">
-
-                        <Label
-                            Padding="10"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Top"
-                            Content="Авторизация"
-                            FontFamily="Elektra Pro"
-                            FontSize="24"
-                            Foreground="White" />
-
-                    </Border>
-
-
-
-                    <Image
-                        Grid.Column="1"
-                        Width="650"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Source="/Resourses/Pictures/BurLoginBackground.png" />
-
-                    <uc:BindablePasswordBox
-                        Grid.Row="1"
-                        Width="230"
-                        Height="35"
-                        Margin="250,0,0,0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        FontSize="27"
-                        Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                        TabIndex="1" />
-
-                    <Label
-                        Grid.Row="0"
-                        Margin="0,0,250,0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        Content="Логин"
-                        FontFamily="Elektra Pro"
-                        FontSize="24"
-                        Foreground="White" />
-
-                    <Border
-                        Grid.Row="1"
-                        Width="230"
-                        Height="35"
-                        Margin="0,0,250,0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        BorderBrush="White"
-                        BorderThickness="2"
-                        CornerRadius="15,15,15,15"
-                        IsEnabled="True">
-                        <TextBox
-                            Padding="6"
-                            VerticalContentAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            FontFamily="Elektra Pro"
-                            FontSize="16"
-                            Foreground="White"
-                            Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" />
-
-                    </Border>
-
-                    <Label
-                        Grid.Row="0"
-                        Margin="250,0,0,0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        Content="Пароль"
-                        FontFamily="Elektra Pro"
-                        FontSize="24"
-                        Foreground="White" />
-                </Grid>
-            </Border>
-
-            <Button
-                Grid.Row="0"
-                Grid.Column="1"
-                Width="300"
-                Height="50"
-                Margin="20"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom"
-                Background="Cyan"
-                BorderThickness="0"
-                Command="{Binding AuthorizationCommand}"
-                Content="Войти"
-                Cursor="Hand"
-                FontFamily="Elektra Pro"
-                FontSize="22"
-                TabIndex="2">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15" />
-                    </Style>
-                </Button.Resources>
-            </Button>
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Width="235"
+                    Background="#09162E"
+                    Command="{Binding AuthorizationCommand}"
+                    Content="Войти"
+                    Cursor="Hand"
+                    FontFamily="Avenir Next Cyr"
+                    FontSize="24"
+                    Foreground="#BEC2A8">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 
