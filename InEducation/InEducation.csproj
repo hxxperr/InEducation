@@ -155,6 +155,9 @@
     <Compile Include="View\Pages\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\DefaultV.xaml.cs">
+      <DependentUpon>DefaultV.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\DisciplineView.xaml.cs">
       <DependentUpon>DisciplineView.xaml</DependentUpon>
     </Compile>
@@ -163,9 +166,6 @@
     </Compile>
     <Compile Include="View\Pages\MagazineView.xaml.cs">
       <DependentUpon>MagazineView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pages\StudentView.xaml.cs">
-      <DependentUpon>StudentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\SubjectAddView.xaml.cs">
       <DependentUpon>SubjectAddView.xaml</DependentUpon>
@@ -239,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\DefaultV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\DisciplineView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -248,10 +252,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\MagazineView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pages\StudentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

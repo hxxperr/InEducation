@@ -1,15 +1,15 @@
 ﻿using InEducation.Infrastructure;
+using InEducation.Model;
 using InEducation.Server;
+using InEducation.View.Pages;
 using InEducation.ViewModels.Base;
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using InEducation.Model;
-using System.Threading.Tasks;
 using InEducation.View.Pages;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Threading;
-using System.Collections.Generic;
 
 namespace InEducation.ViewModels
 {
@@ -27,7 +27,7 @@ namespace InEducation.ViewModels
             {
                 Set(ref _user, value);
                 NotifyObservers();
-            } 
+            }
         }
 
         private string _Login;
@@ -68,7 +68,6 @@ namespace InEducation.ViewModels
         /// <returns></returns>
         private async Task UserConnect(string login, string password)
         {
-            // Выполняется асинхронно
             await Task.Run(() =>
             {
                 var loginUser = context.Пользователь.Where(u => u.Email == login &&
@@ -83,10 +82,10 @@ namespace InEducation.ViewModels
                                 Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new AdminView()));
                                 break;
                             case "Преподаватель":
-                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new TeacherView()));
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new DefaultV()));
                                 break;
                             case "Ученик":
-                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new StudentView()));
+                                Application.Current.Dispatcher.Invoke(() => Navigation.Navigation.GoTo(new DefaultV()));
                                 break;
                         }
                     }

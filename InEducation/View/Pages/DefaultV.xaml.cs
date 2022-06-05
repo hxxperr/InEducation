@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InEducation.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для StudentView.xaml
+    /// Логика взаимодействия для DefaultV.xaml
     /// </summary>
-    public partial class StudentView : Page
+    public partial class DefaultV : Page
     {
-        public StudentView()
+        public DefaultV()
         {
             InitializeComponent();
         }
