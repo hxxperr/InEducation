@@ -7,13 +7,127 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="StudentView"
     mc:Ignorable="d">
-
     <Grid Background="#1E3B71">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="293" />
             <ColumnDefinition Width="903*" />
         </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="86" />
+                <RowDefinition Height="54*" />
+            </Grid.RowDefinitions>
+
+            <Button
+                Grid.Row="1"
+                Background="#09162E"
+                BorderBrush="#BEC2A8"
+                Cursor="Hand"
+                Foreground="#BEC2A8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="210" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontFamily="Hiragino Sans GB W3"
+                        FontSize="24"
+                        Text="Задачи" />
+                    
+                    <Image Grid.Column="1" Source="/Resourses/Pictures/background/graduation-hat.png" />
+
+
+                </Grid>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button
+                Grid.Row="3"
+                Background="#344F82"
+                BorderBrush="#BEC2A8"
+                Cursor="Hand"
+                Foreground="#BEC2A8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="185" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Column="2"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        FontFamily="Hiragino Sans GB W3"
+                        FontSize="22"
+                        Text="Предметы" />
+
+                    <Image Grid.Column="1" Source="/Resourses/Pictures/background/book.png" />
+                </Grid>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button
+                Grid.Row="5"
+                Background="#1F5FD7"
+                BorderBrush="#BEC2A8"
+                Width="172"
+                Cursor="Hand"
+                Foreground="#BEC2A8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="86" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Column="2"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Hiragino Sans GB W3"
+                        FontSize="24"
+                        Text="Чаты" />
+
+                    <Image Grid.Column="1" Source="/Resourses/Pictures/background/speech-bubble.png" />
+                </Grid>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
 
         <Image
             Grid.Column="2"
